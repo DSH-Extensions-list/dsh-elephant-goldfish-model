@@ -1,5 +1,9 @@
 # Elephant-Goldfish Model for DeepSeek Harness
 
+<p align="center">
+  <img src="assets/logo.png" alt="A blue elephant beside an orange goldfish" width="360">
+</p>
+
 This unofficial Apache-2.0 port packages Google's EGM skills, reviewer personas,
 and standards for DeepSeek Harness 0.2.2-alpha.3. The pinned upstream commit is in
 [upstream/REVISION](upstream/REVISION). The seven skill entry points add a Harness
