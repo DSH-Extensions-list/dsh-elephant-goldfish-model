@@ -4,31 +4,34 @@
   <img src="assets/logo.png" alt="A blue elephant beside an orange goldfish" width="360">
 </p>
 
-This unofficial Apache-2.0 port packages Google's EGM skills, reviewer personas,
-and standards for DeepSeek Harness 0.2.2-alpha.3. The pinned upstream commit is in
-[upstream/REVISION](upstream/REVISION). The seven skill entry points add a Harness
-integration note. The packaged personas and standards come directly from
-[upstream](https://github.com/google/elephant-goldfish-model).
+Ever read a design doc and realized a crucial detail only made sense because you were there for the discussion? That’s the idea behind Elephant-Goldfish.
 
-Download the tarball from [GitHub Releases](https://github.com/DSH-Extensions-list/dsh-elephant-goldfish-model/releases/latest).
-In DeepSeek Harness, open **Plugin Hub → Add**, select the downloaded tarball,
-and enable it. Open the composer slash menu in a preset with native skill support.
+The Elephant is the DSH session you’ve been working in. It knows the tradeoffs you discussed and helps turn them into a design. The Goldfish are reviewers that each start in a fresh conversation. They get the draft and the files they need to review it, so they can spot gaps your original session might gloss over.
 
-| Command | Purpose |
+## Get started
+
+1. Download the `.tgz` from the [latest release](https://github.com/DSH-Extensions-list/dsh-elephant-goldfish-model/releases/latest).
+2. In DSH, open **Plugin Hub → Add**, choose the file, and enable the plugin.
+3. Open the composer and type `/egm` to see the commands.
+
+Already have a design doc? Try `/egm-review design.md`. For example, if you’re designing a background job that retries, see whether the draft explains what happens when a job runs twice or stops halfway through.
+
+EGM works on its own inside DSH. You don’t need any other plugins. The commands were verified on DSH `0.2.2-alpha.3`. For Goldfish reviews, use a preset that exposes DSH’s built-in `subagent` tool with fresh conversations. [How reviews run in DSH](upstream/docs/deepseek-harness.md)
+
+## The seven commands
+
+| Command | When to use it |
 | --- | --- |
-| `/egm-brainstorm` | Clarify an idea and develop a concept brief |
-| `/egm-draft` | Draft a design from a brief or notes |
-| `/egm-review` | Review a software design across five stages |
-| `/egm-review-loop` | Review a document with selected personas and standards |
-| `/egm-resolve` | Work through findings and apply approved edits |
-| `/egm-bootstrap` | Document a repository subtree |
-| `/egm-drift-report` | Compare design documents with the code |
+| `/egm-brainstorm` | You have an idea and want to work out what to build. |
+| `/egm-draft` | You have notes or a brief and want to turn them into a design doc. |
+| `/egm-review` | You have a draft and want to put it through the five-stage review. |
+| `/egm-review-loop` | You want to pick the reviewers and standards for a document review. |
+| `/egm-resolve` | You have review findings and want to decide which changes to make. |
+| `/egm-bootstrap` | You want to document how part of an existing repo works. |
+| `/egm-drift-report` | You want to see where the code and design docs have diverged. |
 
-The extension is self-contained and uses Harness’s built-in skill registry.
-Goldfish reviews require a preset that exposes Harness’s native fresh-context
-`subagent` tool. Each Goldfish receives its own task and selected file paths.
-See the [Harness integration](upstream/docs/deepseek-harness.md) for reviewer
-isolation and completion behavior.
+## Working on the plugin
 
-Run `npm test` to check command registration and resource loading. Run
-`npm pack` to build a tarball for the Plugin Hub.
+Run `npm test` to check command registration and bundled files. Run `npm pack` to build a tarball you can install in DSH.
+
+This is my DSH port of [Google’s Elephant-Goldfish Model](https://github.com/google/elephant-goldfish-model). It includes the upstream reviewer personas and standards. [Upstream revision](upstream/REVISION) · [License](LICENSE)
