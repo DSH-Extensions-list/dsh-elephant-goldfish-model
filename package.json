@@ -1,0 +1,42 @@
+{
+  "name": "dsh-elephant-goldfish-model",
+  "version": "0.1.2",
+  "description": "Elephant-Goldfish Model design and fresh-context review workflows for DeepSeek Harness.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.2-alpha.3 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "index.js",
+    "catalog.json",
+    "cordis.patch.yml",
+    "upstream",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "elephant-goldfish"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DSH-Extensions-list/dsh-elephant-goldfish-model.git"
+  },
+  "license": "Apache-2.0"
+}
